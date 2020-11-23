@@ -1,8 +1,8 @@
-const { combineReducers } = require("redux")
-const { default: gamesReducer } = require("./gamesReducer")
+const { combineReducers } = require("redux");
+const { default: gamesReducer } = require("./gamesReducer");
 
 const rootReducer = combineReducers({
-  gaames: gamesReducer,
-})
+    games: gamesReducer,
+});
 
-export default rootReducer
+export default rootReducer;
