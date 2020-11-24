@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { loadGames } from "../actions/gameAction";
+import GameDetail from "../components/GameDetail";
 // styling and animation
 import styled from "styled-components";
 import { motion } from "framer-motion";
@@ -16,12 +17,13 @@ const Home = () => {
 
     // get data back
 
-    const { popular, upcoming, newGames } = useSelector((state) => state.games);
+    const { popular, upcoming, newGames } = useSelector(state => state.games);
     return (
         <GameList>
+            <GameDetail />
             <h2>Upcoming Games</h2>
             <Games>
-                {upcoming.map((game) => (
+                {upcoming.map(game => (
                     <Game
                         name={game.name}
                         released={game.released}
@@ -33,7 +35,7 @@ const Home = () => {
             </Games>
             <h2>Popular Games</h2>
             <Games>
-                {popular.map((game) => (
+                {popular.map(game => (
                     <Game
                         name={game.name}
                         released={game.released}
@@ -45,7 +47,7 @@ const Home = () => {
             </Games>
             <h2>New Games</h2>
             <Games>
-                {newGames.map((game) => (
+                {newGames.map(game => (
                     <Game
                         name={game.name}
                         released={game.released}
